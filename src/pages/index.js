@@ -14,8 +14,30 @@ const Home = () => {
   return (
     <div id="homescreen" className="relative">
       <Head>
-        <title>Hey, I&apos;m Helmi Febri Nandani.</title>
-        <meta name="description" content="Helmi Febri Nandani" />
+        <title>Helmi Febri Nandani: Senior AI Product Specialist, Jakarta</title>
+        <meta
+          name="description"
+          content="Senior AI Product Specialist in Jakarta. I build production AI: RAG platforms on self-hosted infrastructure, agentic tools, and automations that run a company's back office."
+        />
+        <meta
+          property="og:title"
+          content="Helmi Febri Nandani: Senior AI Product Specialist, Jakarta"
+        />
+        <meta
+          property="og:description"
+          content="I build production AI: RAG platforms, agentic tools, and back-office automation. Jakarta, Indonesia."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://helmifnandani.github.io" />
+        <meta name="twitter:card" content="summary" />
+        <meta
+          name="twitter:title"
+          content="Helmi Febri Nandani: Senior AI Product Specialist, Jakarta"
+        />
+        <meta
+          name="twitter:description"
+          content="I build production AI: RAG platforms, agentic tools, and back-office automation. Jakarta, Indonesia."
+        />
         <link rel="icon" href={logo.src} />
       </Head>
       <Moon />

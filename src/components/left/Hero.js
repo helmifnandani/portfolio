@@ -62,8 +62,28 @@ export default function Hero({ section }) {
           Download my Resume
         </a>
       </div>
+      <p className="font-light leading-7 mb-4">
+        Senior AI Product Specialist at{" "}
+        <a
+          href="https://leverategroup.asia/"
+          target="_blank"
+          rel="noreferrer"
+          className="font-bold text-brand hover:underline"
+        >
+          Leverate Group
+        </a>
+        , based in Jakarta. I build production AI: RAG platforms on
+        self-hosted infrastructure, agentic tools, and the unglamorous
+        automations that quietly run a company&apos;s back office.
+      </p>
+      <p className="font-light leading-7 mb-4">
+        Nearly a decade of front-end engineering sits underneath all of it,
+        which is why the AI I ship doesn&apos;t look like a rushed demo.
+      </p>
       <p className="font-light leading-7">
-        AI Product Specialist and Front End Developer based in Jakarta, Indonesia with proven experience in crafting responsive, user-centric designs and implementing AI-driven solutions. Currently focused on exploring, researching, and integrating AI technologies to enhance business operations while leveraging a strong front-end development background to create intuitive interfaces for AI solutions. Driven by a passion for innovation and emerging technologies, consistently expanding expertise in AI platforms, APIs, and modern development stacks. Dedicated to bridging the gap between complex AI concepts and practical business applications through technical skills, creativity, and strategic thinking. An enthusiasm for video games serves not only as a source of enjoyment but also sharpens problem-solving abilities and fuels a creative approach to both coding and AI implementation challenges.
+        I also teach it: paid workshops, client adoption programs, and the
+        work of translating what AI can actually do into something a
+        non-technical executive can act on.
       </p>
       <Links section={section} />
     </div>

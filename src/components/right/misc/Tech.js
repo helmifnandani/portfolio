@@ -1,45 +1,57 @@
 import Card from "../../utilities/Card";
 
+const TECH_GROUPS = [
+  {
+    group: "AI & Machine Learning",
+    items:
+      "OpenAI API, Replicate, LangChain, RAG Pipelines, pgvector, ChromaDB, Embeddings, MCP, Claude Code, MediaPipe, Prompt Engineering, LLM Evaluation",
+  },
+  {
+    group: "Front End",
+    items:
+      "TypeScript, JavaScript, React, Next.js, Tailwind, React Query, Redux Toolkit, Framer Motion, HTML, CSS",
+  },
+  {
+    group: "Back End & Data",
+    items:
+      "PostgreSQL, Drizzle ORM, Redis, Supabase, Python, REST APIs, MS SQL Server, C# / .NET",
+  },
+  {
+    group: "Automation & Infrastructure",
+    items: "n8n, Docker, Dokploy, Cloudflare, Vercel, Azure, Git, Figma, Notion",
+  },
+];
+
 export default function Tech() {
   return (
     <Card>
-      <h3 className="font-bold text-2xl mb-6">Tech I Love</h3>
-      <p className="font-light leading-7 mb-2">
-        My choice tech stack GENERALLY (but not always):
+      <h3 className="font-bold text-2xl mb-6">Tech I Work With</h3>
+      <p className="font-light leading-7 mb-4">
+        AI is where I spend most of my time now. The front-end layer
+        underneath it is what keeps the output from looking like a demo.
       </p>
-      <ul className="mb-4 grid grid-cols-2 gap-x-2">
-        <li className="font-light leading-7">• HTML</li>
-        <li className="font-light leading-7">• CSS</li>
-        <li className="font-light leading-7">• JavaScript</li>
-        <li className="font-light leading-7">• TypeScript</li>
-        <li className="font-light leading-7">• React</li>
-        <li className="font-light leading-7">• Redux</li>
-        <li className="font-light leading-7">• Redux Tool Kit</li>
-        <li className="font-light leading-7">• React Query</li>
-        <li className="font-light leading-7">• Next JS</li>
-        <li className="font-light leading-7">• Tailwind</li>
-        <li className="font-light leading-7">• Axios</li>
-        <li className="font-light leading-7">• jQuery</li>
-        <li className="font-light leading-7">• Bootstrap</li>
-        <li className="font-light leading-7">• Rivets JS</li>
-        <li className="font-light leading-7">• Python</li>
-      </ul>
-      <p className="font-light leading-7 mb-2">
-        Some other tech that have used before:
-      </p>
-      <ul className="grid grid-cols-2 gap-x-2">
-        <li className="font-light leading-7">• MS Sql Server</li>
-        <li className="font-light leading-7">• C#</li>
-        <li className="font-light leading-7">• .Net</li>
-      </ul>
-      <p className="font-light leading-7 mb-2">Tools that I familiar with:</p>
-      <ul className="grid grid-cols-2 gap-x-2">
-        <li className="font-light leading-7">• Git</li>
-        <li className="font-light leading-7">• Figma</li>
-        <li className="font-light leading-7">• Notion</li>
-        <li className="font-light leading-7">• Azure</li>
-        <li className="font-light leading-7">• Supabase</li>
-      </ul>
+      <div className="overflow-x-auto">
+        <table className="w-full text-left border-collapse table-fixed">
+          <thead>
+            <tr className="border-b border-white/20">
+              <th className="font-bold py-2 pr-4 align-top w-1/3">Group</th>
+              <th className="font-bold py-2 align-top">Items</th>
+            </tr>
+          </thead>
+          <tbody>
+            {TECH_GROUPS.map(({ group, items }) => (
+              <tr key={group} className="border-b border-white/10">
+                <td className="font-semibold py-3 pr-4 align-top">
+                  {group}
+                </td>
+                <td className="font-light leading-7 py-3 align-top">
+                  {items}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </Card>
   );
 }
