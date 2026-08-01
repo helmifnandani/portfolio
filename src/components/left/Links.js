@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 export default function Links({ section }) {
   return (
     <div className="flex flex-wrap items-center justify-start mt-6">
@@ -11,38 +9,35 @@ export default function Links({ section }) {
   );
 }
 
-const Link = ({
-  text,
-  label,
-  inView,
-}) => {
-  const [selected, setSelected] = useState(false);
+const HOVER_TEXT =
+  "[@media(hover:hover)_and_(pointer:fine)]:group-hover:text-brand";
+const HOVER_BG =
+  "[@media(hover:hover)_and_(pointer:fine)]:group-hover:bg-brand";
 
+const Link = ({ text, label, inView }) => {
   return (
     <div
       onClick={() => {
         const el = document.getElementById(text.toLowerCase());
         el?.scrollIntoView({ behavior: "smooth" });
       }}
-      onMouseEnter={() => setSelected(true)}
-      onMouseLeave={() => setSelected(false)}
-      className="flex items-center justify-center text-xs font-bold mr-4 mb-2 cursor-pointer"
+      className="group flex items-center justify-center text-xs font-bold mr-4 mb-2 cursor-pointer transition-transform active:scale-95"
     >
       <span
-        className={`transition-colors ${
-          selected || inView ? "text-brand" : "text-white"
+        className={`transition-colors ease-brand-out ${HOVER_TEXT} ${
+          inView ? "text-brand" : "text-white"
         }`}
       >
         {label}
       </span>
       <div
-        className={`w-[12px] lg:w-[20px] h-[1px] mx-1 transition-colors ${
-          selected || inView ? "bg-brand" : "bg-white"
+        className={`w-[12px] lg:w-[20px] h-[1px] mx-1 transition-colors ease-brand-out ${HOVER_BG} ${
+          inView ? "bg-brand" : "bg-white"
         }`}
       />
       <span
-        className={`transition-colors ${
-          selected || inView ? "text-brand" : "text-white"
+        className={`transition-colors ease-brand-out ${HOVER_TEXT} ${
+          inView ? "text-brand" : "text-white"
         }`}
       >
         {text.toUpperCase()}

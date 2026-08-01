@@ -15,6 +15,9 @@ module.exports = {
       fontFamily: {
         sans: ["var(--font-space-mono)", "monospace"],
       },
+      transitionTimingFunction: {
+        "brand-out": "cubic-bezier(0.23, 1, 0.32, 1)",
+      },
     },
   },
   plugins: [],

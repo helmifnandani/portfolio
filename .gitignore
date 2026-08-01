@@ -37,3 +37,4 @@ yarn-error.log*
 *.tsbuildinfo
 /.history
 README.md
+.gstack/

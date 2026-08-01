@@ -1,9 +1,19 @@
-import { motion, useScroll, useTransform } from "framer-motion";
+import {
+  motion,
+  useScroll,
+  useTransform,
+  useReducedMotion,
+} from "framer-motion";
 import React from "react";
 
 function Moon() {
-  const { scrollY } = useScroll();
-  const y = useTransform(scrollY, [0, 12000], [0, -500]);
+  const { scrollYProgress } = useScroll();
+  const shouldReduceMotion = useReducedMotion();
+  const y = useTransform(
+    scrollYProgress,
+    [0, 1],
+    shouldReduceMotion ? [0, 0] : [0, -500]
+  );
 
   return (
     <motion.div

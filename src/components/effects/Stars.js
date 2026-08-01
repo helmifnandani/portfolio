@@ -1,9 +1,15 @@
-import { motion, useTransform, useScroll } from "framer-motion";
+import {
+  motion,
+  useTransform,
+  useScroll,
+  useReducedMotion,
+} from "framer-motion";
 import React, { useEffect, useState } from "react";
 const NUM_STARS = 150;
 
 function Stars() {
   const [stars, setStars] = useState([]);
+  const { scrollY } = useScroll();
 
   const generateStars = () => {
     const starData = [];
@@ -41,6 +47,7 @@ function Stars() {
         ({ key, scrollPos, scrollParams, horizontalPos, bottomInitial }) => (
           <Star
             key={key}
+            scrollY={scrollY}
             scrollPos={scrollPos}
             scrollParams={scrollParams}
             horizontalPos={horizontalPos}
@@ -57,13 +64,22 @@ export default React.memo(Stars, () => {
 });
 
 const Star = ({
+  scrollY,
   scrollPos = [0, 8250],
   scrollParams = [0, -2000],
   horizontalPos = "12px",
   bottomInitial = "-50vh",
 }) => {
-  const { scrollY } = useScroll();
-  const y = useTransform(scrollY, scrollPos, scrollParams);
+  const shouldReduceMotion = useReducedMotion();
+  // Raw scrollY (not scrollYProgress) is intentional: each star's scrollPos
+  // range is a different pixel span, giving them independent drift lengths.
+  // Normalizing to 0-1 progress would make every star drift over the same
+  // scroll distance and lose that variation.
+  const y = useTransform(
+    scrollY,
+    scrollPos,
+    shouldReduceMotion ? [0, 0] : scrollParams
+  );
 
   const getRandValue = (max, min = 0) =>
     Math.floor(Math.random() * (max - min) + min);

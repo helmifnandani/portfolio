@@ -20,37 +20,44 @@ export default function Hero({ section }) {
         I&apos;m Helmi Febri Nandani<span className="text-brand">.</span>
       </h1>
       <div className="flex items-center justify-start my-8">
-        <div className="mr-4 transition-opacity hover:opacity-70 cursor-pointer">
-          <img
-            alt=""
-            onClick={() => {
-              window.open("https://github.com/helmifnandani", "_blank");
-            }}
-            src={github.src}
-          />
-        </div>
-        <div className="mr-4 transition-opacity hover:opacity-70 cursor-pointer">
-          <img
-            alt=""
-            onClick={() => {
-              window.open(
-                "https://www.linkedin.com/in/helmifebrinandani/",
-                "_blank"
-              );
-            }}
-            src={linkedin.src}
-          />
-        </div>
-        <div className="transition-opacity hover:opacity-70 cursor-pointer">
-          <img
-            alt=""
-            onClick={() => {
-              window.open("mailto:helmifnandani@gmail.com");
-            }}
-            src={google.src}
-            className="transition-opacity hover:opacity-70 cursor-pointer"
-          />
-        </div>
+        <a
+          href="https://github.com/helmifnandani"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="GitHub (Personal)"
+          title="GitHub (Personal)"
+          className="mr-4 transition-opacity hover:opacity-70"
+        >
+          <img alt="GitHub (Personal)" src={github.src} />
+        </a>
+        <a
+          href="https://github.com/hfebri"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="GitHub (Work)"
+          title="GitHub (Work)"
+          className="mr-4 transition-opacity hover:opacity-70"
+        >
+          <img alt="GitHub (Work)" src={github.src} />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/helmifebrinandani/"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="LinkedIn"
+          className="mr-4 transition-opacity hover:opacity-70"
+        >
+          <img alt="LinkedIn" src={linkedin.src} />
+        </a>
+        <a
+          href="mailto:helmifnandani@gmail.com"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Email"
+          className="transition-opacity hover:opacity-70"
+        >
+          <img alt="Email" src={google.src} />
+        </a>
       </div>
       <div className="mb-8">
         <a
